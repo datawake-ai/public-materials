@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="DataWake 公司对外资料中心：业务介绍、产品材料与公开文档。">
+  <title>DataWake｜对外资料中心</title>
+  <link rel="icon" href="data:,">
+  <style>
+    :root {
+      --navy: #06152d;
+      --navy-light: #0b2d62;
+      --blue: #0f62fe;
+      --cyan: #53eadc;
+      --paper: #f5f8fb;
+      --ink: #111827;
+      --muted: #65758b;
+      --line: #dce5ee;
+      --font: Inter, "Noto Sans SC", "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: var(--font);
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      min-height: 410px;
+      padding: 42px max(28px, calc((100vw - 1120px) / 2));
+      color: #fff;
+      background:
+        radial-gradient(circle at 82% 18%, rgba(83, 234, 220, .24), transparent 24%),
+        radial-gradient(circle at 96% 88%, rgba(15, 98, 254, .38), transparent 30%),
+        linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 72%, #0b3d79 100%);
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      right: -150px;
+      bottom: -260px;
+      width: 580px;
+      height: 580px;
+      border: 1px solid rgba(255,255,255,.15);
+      border-radius: 50%;
+      box-shadow: 0 0 0 64px rgba(255,255,255,.025), 0 0 0 128px rgba(255,255,255,.018);
+    }
+    .nav,
+    .hero-copy,
+    .content,
+    footer { position: relative; z-index: 1; max-width: 1120px; margin: 0 auto; }
+    .nav { display: flex; align-items: center; justify-content: space-between; }
+    .brand { display: flex; align-items: center; gap: 12px; }
+    .brand-mark {
+      display: grid;
+      place-items: center;
+      width: 40px;
+      height: 40px;
+      border: 1px solid rgba(255,255,255,.28);
+      border-radius: 12px;
+      color: var(--cyan);
+      background: rgba(255,255,255,.08);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: -.05em;
+    }
+    .brand strong { display: block; font-size: 17px; letter-spacing: -.02em; }
+    .brand span { display: block; margin-top: 3px; color: #9db2cd; font-size: 9px; letter-spacing: .16em; text-transform: uppercase; }
+    .nav-note { color: #aebdd0; font-size: 12px; letter-spacing: .06em; }
+    .hero-copy { padding-top: 78px; }
+    .eyebrow { margin: 0 0 14px; color: var(--cyan); font-size: 12px; font-weight: 800; letter-spacing: .17em; text-transform: uppercase; }
+    h1 { max-width: 760px; margin: 0; font-size: clamp(38px, 6vw, 64px); line-height: 1.08; letter-spacing: -.055em; }
+    .intro { max-width: 640px; margin: 22px 0 0; color: #c8d5e5; font-size: 17px; line-height: 1.75; }
+
+    main { padding: 64px max(28px, calc((100vw - 1120px) / 2)) 86px; }
+    .section-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 24px; }
+    h2 { margin: 0; font-size: 30px; letter-spacing: -.035em; }
+    .section-head p { margin: 0; color: var(--muted); font-size: 13px; }
+    .material-card {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 28px;
+      align-items: center;
+      padding: 34px;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background: #fff;
+      box-shadow: 0 16px 45px rgba(20, 39, 68, .07);
+    }
+    .meta { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
+    .tag { padding: 5px 10px; border-radius: 999px; color: #245185; background: #edf4ff; font-size: 11px; font-weight: 760; }
+    .tag.cyan { color: #08766e; background: #e8fbf9; }
+    .material-card h3 { margin: 0 0 12px; font-size: 27px; letter-spacing: -.035em; }
+    .material-card p { max-width: 700px; margin: 0; color: var(--muted); font-size: 15px; line-height: 1.75; }
+    .actions { display: flex; flex-direction: column; gap: 10px; min-width: 140px; }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 0 18px;
+      border: 1px solid var(--blue);
+      border-radius: 11px;
+      color: #fff;
+      background: var(--blue);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 760;
+      transition: transform .18s ease, box-shadow .18s ease;
+    }
+    .button:hover { transform: translateY(-1px); box-shadow: 0 8px 22px rgba(15, 98, 254, .22); }
+    .button.secondary { color: #34506f; border-color: var(--line); background: #fff; }
+    .button.secondary:hover { box-shadow: 0 8px 22px rgba(20, 39, 68, .09); }
+    footer { padding: 22px 0 34px; color: #8795a8; border-top: 1px solid var(--line); font-size: 11px; letter-spacing: .04em; }
+
+    @media (max-width: 720px) {
+      .hero { min-height: 390px; padding-top: 28px; }
+      .nav-note { display: none; }
+      .hero-copy { padding-top: 64px; }
+      .intro { font-size: 15px; }
+      main { padding-top: 44px; }
+      .section-head { display: block; }
+      .section-head p { margin-top: 8px; }
+      .material-card { grid-template-columns: 1fr; padding: 26px; }
+      .actions { flex-direction: row; }
+      .button { flex: 1; }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <nav class="nav" aria-label="站点导航">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true">DW</div>
+        <div><strong>DataWake</strong><span>Growth Intelligence</span></div>
+      </div>
+      <div class="nav-note">PUBLIC MATERIALS · 对外资料中心</div>
+    </nav>
+    <div class="hero-copy">
+      <p class="eyebrow">Company Materials</p>
+      <h1>让增长能力<br>被看见、被理解</h1>
+      <p class="intro">集中呈现 DataWake 的业务介绍、产品材料与公开文档。所有内容均可在线浏览，也可下载用于客户沟通与业务分享。</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="content" aria-labelledby="materials-title">
+      <div class="section-head">
+        <h2 id="materials-title">公开资料</h2>
+        <p>持续更新 · 按版本归档</p>
+      </div>
+      <article class="material-card">
+        <div>
+          <div class="meta">
+            <span class="tag cyan">最新版本</span>
+            <span class="tag">HTML</span>
+            <span class="tag">PDF</span>
+            <span class="tag">9 页</span>
+          </div>
+          <h3>Wake AI 业务介绍 V2.4</h3>
+          <p>介绍 DataWake 的付费广告增长服务，以及面向亚马逊大卖家的 WakeQora AI 广告投手产品、标杆客户落地成果与核心团队能力。</p>
+        </div>
+        <div class="actions">
+          <a class="button" href="materials/wake-ai-business-introduction/v2.4/">在线查看</a>
+          <a class="button secondary" href="materials/wake-ai-business-introduction/v2.4/Wake-AI-Business-Introduction-V2.4.pdf" download>下载 PDF</a>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <footer>© 2026 DataWake. All rights reserved.</footer>
+</body>
+</html>
